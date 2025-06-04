@@ -1,0 +1,12 @@
+/* src/components/Navbar.css */
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.container { display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; }
+.nav-links { list-style: none; display: flex; gap: 1.5rem; }
+.nav-links a { text-decoration: none; color: inherit; font-weight: 500; }
+.logo { font-size: 1.25rem; font-weight: 700; }
