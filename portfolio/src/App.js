@@ -1,11 +1,10 @@
 import React from 'react';
-import LeetCodeStats from './components/LeetCodeStats';
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      <h1>Noah Scott's Portfolio</h1>
-      <LeetCodeStats />
+      <Header />
     </div>
   );
 }
