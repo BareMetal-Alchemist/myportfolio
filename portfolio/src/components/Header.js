@@ -5,7 +5,7 @@ function Header() {
   return(
     <div
         style = {{
-          fontFamily: "math",
+          fontFamily: "Fira Code",
           fontSize: "40px",
           display: "flex",
           flexDirection: "column",
