@@ -1,0 +1,221 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: saturate(1.1) blur(8px);
+  -webkit-backdrop-filter: saturate(1.1) blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.nav--scrolled {
+  border-bottom-color: var(--foam);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: var(--nav-height);
+}
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--espresso);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav__brand:hover {
+  color: var(--copper-ink);
+}
+
+.nav__mark {
+  color: var(--espresso);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav__links ul {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav__links ul a {
+  position: relative;
+  display: inline-block;
+  padding: 6px 0;
+  color: var(--roast);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.nav__links ul a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--copper);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.nav__links ul a:hover,
+.nav__links ul a:focus-visible {
+  color: var(--espresso);
+}
+
+.nav__links ul a:hover::after,
+.nav__links ul a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.nav__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 18px;
+  border-left: 1px solid var(--foam);
+}
+
+.nav__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--roast);
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.nav__icon:hover {
+  background: var(--cream);
+  color: var(--espresso);
+}
+
+.nav__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.nav__toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--foam);
+  border-radius: 50%;
+  background: var(--cream);
+  position: relative;
+}
+
+.nav__burger,
+.nav__burger::before,
+.nav__burger::after {
+  position: absolute;
+  left: 13px;
+  width: 18px;
+  height: 1.5px;
+  background: var(--espresso);
+  border-radius: 2px;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.nav__burger {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav__burger::before,
+.nav__burger::after {
+  content: "";
+  left: 0;
+}
+
+.nav__burger::before {
+  transform: translateY(-6px);
+}
+
+.nav__burger::after {
+  transform: translateY(6px);
+}
+
+.nav__toggle[aria-expanded="true"] .nav__burger {
+  background: transparent;
+}
+
+.nav__toggle[aria-expanded="true"] .nav__burger::before {
+  transform: rotate(45deg);
+}
+
+.nav__toggle[aria-expanded="true"] .nav__burger::after {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 860px) {
+  .nav__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px var(--gutter) 20px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--foam);
+    box-shadow: var(--shadow);
+  }
+
+  .nav__links--open {
+    display: flex;
+  }
+
+  .nav__links ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav__links ul a {
+    display: block;
+    padding: 12px 4px;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--foam);
+  }
+
+  .nav__links ul a::after {
+    display: none;
+  }
+
+  .nav__meta {
+    padding-left: 0;
+    border-left: 0;
+    padding-top: 6px;
+  }
+}

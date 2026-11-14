@@ -1,0 +1,186 @@
+.die-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* A chip die: thin border, pin pads along the top and left edges. */
+.die-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 26px 26px 22px;
+  background: var(--paper);
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.die-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--latte);
+  box-shadow: var(--shadow);
+}
+
+.die-card::before,
+.die-card::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+/* top pins */
+.die-card::before {
+  top: -6px;
+  left: 28px;
+  right: 28px;
+  height: 5px;
+  background: repeating-linear-gradient(90deg, var(--trace) 0 7px, transparent 7px 16px);
+  border-radius: 2px;
+}
+
+/* left pins */
+.die-card::after {
+  left: -6px;
+  top: 28px;
+  bottom: 28px;
+  width: 5px;
+  background: repeating-linear-gradient(180deg, var(--trace) 0 7px, transparent 7px 16px);
+  border-radius: 2px;
+}
+
+.die-card--featured {
+  grid-column: 1 / -1;
+  background: var(--paper);
+  border-color: var(--copper);
+}
+
+.die-card--featured::before,
+.die-card--featured::after {
+  background-image: repeating-linear-gradient(90deg, var(--copper) 0 7px, transparent 7px 16px);
+}
+
+.die-card--featured::after {
+  background-image: repeating-linear-gradient(180deg, var(--copper) 0 7px, transparent 7px 16px);
+}
+
+.die-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.die-card__head h3 {
+  font-size: 1.5rem;
+}
+
+.die-card--featured .die-card__head h3 {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+}
+
+.die-card__tagline {
+  margin: 4px 0 0;
+  color: var(--roast);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.02rem;
+}
+
+.die-card__part {
+  flex-shrink: 0;
+  padding: 3px 8px;
+  border: 1px solid var(--foam);
+  border-radius: 4px;
+  color: var(--roast);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  background: var(--cream);
+}
+
+.die-card--featured .die-card__part {
+  color: var(--copper-ink);
+  border-color: color-mix(in srgb, var(--copper) 40%, transparent);
+}
+
+.die-card__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 0;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--sage) 16%, var(--paper));
+  color: var(--sage-ink);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+}
+
+.die-card__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.die-card__desc {
+  margin: 0;
+  color: var(--roast);
+  max-width: 78ch;
+}
+
+.die-card__highlight {
+  margin: 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--latte);
+  color: var(--espresso);
+  font-size: 0.95rem;
+}
+
+.die-card__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed var(--foam);
+}
+
+.die-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.die-card__links {
+  display: flex;
+  gap: 14px;
+}
+
+.die-card__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.projects__more {
+  margin: 32px 0 0;
+}
+
+@media (max-width: 820px) {
+  .die-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .die-card {
+    padding: 22px 20px 18px;
+  }
+}

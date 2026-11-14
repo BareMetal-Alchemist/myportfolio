@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# noah-scott.onrender.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio for Noah Scott. Design direction: *a calm Sunday-morning café run by a hardware engineer*: cream paper, copper circuit traces, a `&mut` coffee cup, and chip-die project cards.
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+- **Create React App** (`react-scripts` 5) with React 19, plain JavaScript.
+- Plain CSS with design tokens in `src/styles/tokens.css`. No UI framework, no animation library.
+- Self-hosted variable fonts (Fraunces, Inter, JetBrains Mono; latin subsets, OFL) in `public/fonts`, declared in `src/styles/fonts.css` and preloaded from `public/index.html`.
+- Deployed on **Render as a Static Site**: build command `npm run build`, publish directory `build`. There is no backend.
 
-### `npm start`
+## Editing content
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+All site copy lives in `src/data/`. Components only render what's there.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| File | What it controls |
+|---|---|
+| `profile.js` | Name, pronouns, hero headline/subline/tech list, intro paragraphs, quick facts, meta description |
+| `experience.js` | Work history (most recent first). Bullets can be strings or `{ before, link, after }` for inline links. Grouped roles use `roles: []`. |
+| `projects.js` | Project "dies". `part` is the mono part number; `featured: true` makes a full-width card with the sage label. |
+| `skills.js` | The menu board: sections → items with `name`, `price` (`●●●●○`, `&mut`, `CCE L3`...) and a one-line tasting `note`. |
+| `education.js`, `certifications.js` | Education list and the certifications receipt (`featured: true` highlights a line). |
+| `links.js` | Email, LinkedIn, GitHub, DeFOG repo. |
+| `navigation.js` | Section ids, nav labels and die-map block names. |
 
-### `npm test`
+Search for `TODO(Noah)` in `src/data/` for entries that still need details.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Theme
 
-### `npm run build`
+Light "paper" is the default. The "evening espresso" dark theme follows `prefers-color-scheme` unless a visitor picks a theme with the toggle (stored in `localStorage` as `theme`). Tokens for both live in `src/styles/tokens.css`; every text/background pair was checked against WCAG AA.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Interactive pieces
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Hero pour-over** (`PourOver.js`): the cup fills while a Rust snippet "compiles"; click the cup to replay. Steam drifts toward the pointer.
+- **Die map** (`DieMap.js`): chip floorplan navigation; collapses to a list on small screens.
+- **Experience trace** (`Experience.js`): vias light up as entries scroll into view (IntersectionObserver).
+- **Menu board** (`MenuBoard.js`): hover/focus/tap a skill for its tasting note.
+- **Counter terminal** (`CounterTerminal.js`): small REPL. `help` lists commands; there are a few easter eggs. Lazy-loaded.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Every animation has a `prefers-reduced-motion` path that shows the finished state.
 
-### `npm run eject`
+## Scripts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+npm start        # dev server on :3000
+npm test         # jest + testing-library
+npm run build    # production build into ./build
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Static assets
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`public/` holds `index.html` (meta/OG tags, no-flash theme script), `404.html` (served by Render for unknown paths), `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `og-image.png` (1200×630), `robots.txt`, `sitemap.xml`, and the portrait.

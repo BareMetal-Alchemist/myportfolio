@@ -1,0 +1,9 @@
+The font files in this directory are licensed under the SIL Open Font License 1.1
+(https://openfontlicense.org/). Latin subsets packaged by Fontsource.
+
+- Fraunces (fraunces-latin-wght-normal.woff2, fraunces-latin-wght-italic.woff2)
+  Copyright 2020 The Fraunces Project Authors (github.com/undercasetype/Fraunces)
+- Inter (inter-latin-wght-normal.woff2)
+  Copyright 2016 The Inter Project Authors (github.com/rsms/inter)
+- JetBrains Mono (jetbrains-mono-latin-wght-normal.woff2)
+  Copyright 2020 The JetBrains Mono Project Authors (github.com/JetBrains/JetBrainsMono)

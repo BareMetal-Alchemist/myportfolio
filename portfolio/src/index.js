@@ -1,7 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './styles/global.css'; // Optional
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+import "./styles/tokens.css";
+import "./styles/global.css";
+import App from "./App";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

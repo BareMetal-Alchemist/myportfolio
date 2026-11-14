@@ -1,0 +1,27 @@
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--foam);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--roast);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.copy-btn:hover {
+  border-color: var(--latte);
+  color: var(--espresso);
+}
+
+.copy-btn--copied {
+  color: var(--sage-ink);
+  border-color: var(--sage);
+}
+
+.copy-btn--failed {
+  color: var(--copper-ink);
+}

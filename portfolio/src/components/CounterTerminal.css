@@ -1,0 +1,141 @@
+.counter__toggle {
+  margin-bottom: 20px;
+}
+
+.term {
+  position: relative;
+  max-width: 760px;
+  padding: 12px 0;
+}
+
+.term__paper {
+  position: relative;
+  padding: 18px 20px 14px;
+  background: var(--paper);
+  border-left: 1px solid var(--foam);
+  border-right: 1px solid var(--foam);
+  box-shadow: var(--shadow-soft);
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--espresso);
+}
+
+/* perforated receipt edges */
+.term__paper::before,
+.term__paper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: radial-gradient(circle at 8px 0, transparent 7px, var(--paper) 7.5px);
+  background-size: 16px 12px;
+  background-repeat: repeat-x;
+}
+
+.term__paper::before {
+  top: -12px;
+  transform: scaleY(-1);
+}
+
+.term__paper::after {
+  bottom: -12px;
+}
+
+.term__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed var(--trace);
+  color: var(--roast);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.term__ticket {
+  color: var(--copper-ink);
+}
+
+.term__out {
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 4px;
+  line-height: 1.6;
+  scrollbar-width: thin;
+  scrollbar-color: var(--trace) transparent;
+}
+
+.term__line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.term__line--in {
+  margin-top: 8px;
+  color: var(--copper-ink);
+}
+
+.term__line--out {
+  color: var(--espresso);
+}
+
+.term__prompt {
+  color: var(--copper-ink);
+}
+
+.term__input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--trace);
+  cursor: text;
+}
+
+.term__input {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+  color: var(--espresso);
+  font: inherit;
+  caret-color: var(--copper);
+}
+
+.term__input::placeholder {
+  color: var(--trace);
+}
+
+.term__input:focus {
+  outline: none;
+}
+
+.term__input-row:focus-within {
+  border-top-color: var(--copper);
+}
+
+.term__hint {
+  margin: 6px 0 0;
+  color: var(--roast);
+  font-size: 0.7rem;
+}
+
+@media (max-width: 520px) {
+  .term__paper {
+    padding: 16px 14px 12px;
+    font-size: 0.78rem;
+  }
+
+  .term__out {
+    max-height: 280px;
+  }
+}
+
+.counter {
+  border-top: 1px solid var(--foam);
+}

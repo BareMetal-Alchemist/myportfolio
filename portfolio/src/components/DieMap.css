@@ -1,0 +1,162 @@
+.die-map {
+  padding-top: 0;
+}
+
+.die {
+  width: 100%;
+  max-width: 820px;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.die__pads rect {
+  fill: var(--foam);
+  stroke: var(--trace);
+  stroke-width: 1;
+}
+
+.die__outline {
+  fill: var(--cream);
+  stroke: var(--trace);
+  stroke-width: 1.5;
+}
+
+.die__bus path {
+  fill: none;
+  stroke: var(--trace);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 6;
+}
+
+.die__bus circle {
+  fill: var(--paper);
+  stroke: var(--trace);
+  stroke-width: 1.5;
+}
+
+.die__block {
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+
+.die__rect {
+  fill: var(--paper);
+  stroke: var(--trace);
+  stroke-width: 1.5;
+  transition: fill 180ms ease, stroke 180ms ease;
+}
+
+.die__trace {
+  fill: none;
+  stroke: var(--trace);
+  stroke-width: 1.5;
+  transition: stroke 180ms ease, stroke-width 180ms ease;
+}
+
+.die__trace--bus {
+  stroke-dasharray: 3 5;
+}
+
+.die__via {
+  fill: var(--paper);
+  stroke: var(--trace);
+  stroke-width: 1.5;
+  transition: stroke 180ms ease, fill 180ms ease;
+}
+
+.die__lanes path {
+  stroke: var(--foam);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transition: stroke 180ms ease;
+}
+
+.die__code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  fill: var(--roast);
+  letter-spacing: 0.04em;
+  transition: fill 180ms ease;
+}
+
+.die__name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  fill: var(--espresso);
+}
+
+.die__part {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  fill: var(--roast);
+}
+
+.die__block:hover .die__rect,
+.die__block:focus .die__rect {
+  fill: var(--cream);
+  stroke: var(--copper);
+}
+
+.die__block:hover .die__trace,
+.die__block:focus .die__trace {
+  stroke: var(--copper);
+  stroke-width: 2.5;
+}
+
+.die__block:hover .die__via,
+.die__block:focus .die__via {
+  stroke: var(--copper);
+  fill: var(--copper);
+}
+
+.die__block:hover .die__code,
+.die__block:focus .die__code {
+  fill: var(--copper-ink);
+}
+
+.die__block:hover .die__lanes path,
+.die__block:focus .die__lanes path {
+  stroke: var(--latte);
+}
+
+.die__block:focus .die__rect {
+  stroke-width: 2.5;
+}
+
+/* Mobile list */
+.die-list {
+  display: grid;
+  gap: 8px;
+}
+
+.die-list a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  background: var(--cream);
+  border: 1px solid var(--foam);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--espresso);
+}
+
+.die-list a:hover {
+  border-color: var(--latte);
+}
+
+.die-list__code {
+  min-width: 56px;
+  color: var(--copper-ink);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.die-list__name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}

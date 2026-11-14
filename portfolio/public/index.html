@@ -2,9 +2,67 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Noah Scott</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Noah Scott · Cybersecurity Engineer</title>
+    <meta
+      name="description"
+      content="Brewing better detections. Noah Scott is a cybersecurity engineer building data pipelines and low-level security tools in Go, Rust, C/C++ and Cribl."
+    />
+    <meta name="author" content="Noah Scott" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FBF8F3" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1C1410" />
+    <link rel="canonical" href="https://noah-scott.onrender.com/" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+
+    <!-- Fonts used above the fold. Self-hosted, swap, latin subset only. -->
+    <link rel="preload" href="%PUBLIC_URL%/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="%PUBLIC_URL%/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="%PUBLIC_URL%/fonts/fraunces-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Noah Scott" />
+    <meta property="og:title" content="Noah Scott · Cybersecurity Engineer" />
+    <meta
+      property="og:description"
+      content="Brewing better detections. Data pipelines & low-level security tools in Go, Rust, C/C++ and Cribl."
+    />
+    <meta property="og:url" content="https://noah-scott.onrender.com/" />
+    <meta property="og:image" content="https://noah-scott.onrender.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Cream card with a line-drawn &mut coffee cup and the headline Brewing better detections." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Noah Scott · Cybersecurity Engineer" />
+    <meta
+      name="twitter:description"
+      content="Brewing better detections. Data pipelines & low-level security tools in Go, Rust, C/C++ and Cribl."
+    />
+    <meta name="twitter:image" content="https://noah-scott.onrender.com/og-image.png" />
+
+    <!-- Self-hosted variable fonts (latin subsets, OFL; see /fonts/LICENSE.txt). Inlined so they are discovered before the CSS bundle. -->
+    <style>
+      @font-face{font-family:"Fraunces Variable";font-style:normal;font-display:swap;font-weight:100 900;src:url("%PUBLIC_URL%/fonts/fraunces-latin-wght-normal.woff2") format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+      @font-face{font-family:"Fraunces Variable";font-style:italic;font-display:swap;font-weight:100 900;src:url("%PUBLIC_URL%/fonts/fraunces-latin-wght-italic.woff2") format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+      @font-face{font-family:"Inter Variable";font-style:normal;font-display:swap;font-weight:100 900;src:url("%PUBLIC_URL%/fonts/inter-latin-wght-normal.woff2") format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+      @font-face{font-family:"JetBrains Mono Variable";font-style:normal;font-display:swap;font-weight:100 800;src:url("%PUBLIC_URL%/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    </style>
+
+    <script>
+      // Apply a saved theme before first paint so there's no flash.
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t === "dark" || t === "light") {
+            document.documentElement.setAttribute("data-theme", t);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
+    <noscript>Noah Scott, cybersecurity engineer. Brewing better detections. This site needs JavaScript to render.</noscript>
     <div id="root"></div>
   </body>
 </html>

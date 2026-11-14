@@ -1,0 +1,77 @@
+/* Design tokens: "Sunday-morning café × silicon".
+   Light ("paper") is the default. "Evening espresso" dark theme applies when
+   the visitor's OS prefers dark and they haven't chosen light, or when they
+   pick dark with the toggle (data-theme="dark" on <html>). */
+
+:root {
+  --paper: #fbf8f3;
+  --cream: #f4ece1;
+  --foam: #eadfcf;
+  --trace: #d9cbb6;
+  --latte: #c8a27c;
+  --copper: #b0703f;
+  /* Darker copper for text-sized use so links pass WCAG AA on paper/cream. */
+  --copper-ink: #8f5730;
+  --roast: #6b4a38;
+  --espresso: #2b1f19;
+  --sage: #7f8c6b;
+  --sage-ink: #5c6a4b;
+
+  --coffee: #5a3a28; /* liquid in the cup */
+  --shadow: 0 1px 2px rgba(43, 31, 25, 0.06), 0 12px 32px -12px rgba(43, 31, 25, 0.18);
+  --shadow-soft: 0 6px 24px -14px rgba(43, 31, 25, 0.25);
+  --grain-opacity: 0.018;
+
+  --font-display: "Fraunces Variable", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 14px;
+  --max-width: 1120px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --nav-height: 64px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1c1410;
+    --cream: #241a15;
+    --foam: #33271f;
+    --trace: #43342b;
+    --latte: #c8a27c;
+    --copper: #d08a55;
+    --copper-ink: #e0a26f;
+    --roast: #c9b8a8;
+    --espresso: #f4ece1;
+    --sage: #9daa88;
+    --sage-ink: #b4c19f;
+    --coffee: #3b2619;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -12px rgba(0, 0, 0, 0.6);
+    --shadow-soft: 0 6px 24px -14px rgba(0, 0, 0, 0.6);
+    --grain-opacity: 0.03;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #1c1410;
+  --cream: #241a15;
+  --foam: #33271f;
+  --trace: #43342b;
+  --latte: #c8a27c;
+  --copper: #d08a55;
+  --copper-ink: #e0a26f;
+  --roast: #c9b8a8;
+  --espresso: #f4ece1;
+  --sage: #9daa88;
+  --sage-ink: #b4c19f;
+  --coffee: #3b2619;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -12px rgba(0, 0, 0, 0.6);
+  --shadow-soft: 0 6px 24px -14px rgba(0, 0, 0, 0.6);
+  --grain-opacity: 0.03;
+  color-scheme: dark;
+}

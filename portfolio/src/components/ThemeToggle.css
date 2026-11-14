@@ -1,0 +1,18 @@
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--foam);
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--roast);
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.theme-toggle:hover {
+  color: var(--espresso);
+  border-color: var(--latte);
+}

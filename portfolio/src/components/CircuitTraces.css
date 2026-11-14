@@ -1,0 +1,56 @@
+.page-traces {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.page-traces svg {
+  position: absolute;
+  width: clamp(240px, 32vw, 460px);
+  height: auto;
+  stroke: var(--trace);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.page-traces svg circle {
+  fill: var(--paper);
+  stroke: var(--trace);
+  stroke-width: 1.5;
+}
+
+.page-traces__tl {
+  top: 0;
+  left: 0;
+}
+
+.page-traces__br {
+  right: 0;
+  bottom: 0;
+}
+
+.trace-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 96px;
+  height: 96px;
+  stroke: var(--trace);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.trace-corner circle {
+  fill: var(--paper);
+}
+
+@media (max-width: 720px) {
+  .page-traces svg {
+    width: 200px;
+    opacity: 0.8;
+  }
+}

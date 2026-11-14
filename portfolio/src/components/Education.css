@@ -1,0 +1,224 @@
+.edu__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.edu__subtitle {
+  margin-bottom: 18px;
+  font-size: 1.25rem;
+  color: var(--roast);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.edu__list {
+  display: grid;
+  gap: 14px;
+}
+
+.edu__item {
+  padding: 18px 20px;
+  background: var(--paper);
+  border: 1px solid var(--foam);
+  border-radius: var(--radius);
+}
+
+.edu__dates {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 6px;
+  color: var(--copper-ink);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.edu__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--sage) 16%, var(--paper));
+  color: var(--sage-ink);
+}
+
+.edu__status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.edu__item h4 {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+}
+
+.edu__school {
+  margin: 0;
+  color: var(--espresso);
+}
+
+.edu__note {
+  margin: 8px 0 0;
+  color: var(--roast);
+  font-size: 0.95rem;
+}
+
+/* Receipt */
+.receipt {
+  position: relative;
+  padding: 12px 0;
+}
+
+.receipt__paper {
+  position: relative;
+  padding: 26px 24px 22px;
+  background: var(--paper);
+  border-left: 1px solid var(--foam);
+  border-right: 1px solid var(--foam);
+  box-shadow: var(--shadow-soft);
+}
+
+/* perforated edges */
+.receipt__paper::before,
+.receipt__paper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: radial-gradient(circle at 8px 0, transparent 7px, var(--paper) 7.5px);
+  background-size: 16px 12px;
+  background-repeat: repeat-x;
+}
+
+.receipt__paper::before {
+  top: -12px;
+  transform: scaleY(-1);
+}
+
+.receipt__paper::after {
+  bottom: -12px;
+}
+
+.receipt__head {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.receipt__kicker {
+  margin: 0;
+  color: var(--roast);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+}
+
+.receipt__title {
+  margin: 4px 0 0;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.receipt__lines {
+  display: grid;
+  gap: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--trace);
+}
+
+.receipt__row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.receipt__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--espresso);
+}
+
+.receipt__leader {
+  flex: 1;
+  min-width: 12px;
+  border-bottom: 1px dotted var(--trace);
+  transform: translateY(-4px);
+}
+
+.receipt__date {
+  flex-shrink: 0;
+  color: var(--roast);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.receipt__meta {
+  margin: 4px 0 0;
+  color: var(--roast);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+
+.receipt__line--featured {
+  padding: 12px 12px 12px 14px;
+  margin: 0 -12px;
+  border-left: 3px solid var(--copper);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--latte) 16%, transparent);
+}
+
+.receipt__line--featured .receipt__name {
+  font-weight: 600;
+}
+
+.receipt__star {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sage);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--sage) 25%, transparent);
+}
+
+.receipt__foot {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--trace);
+  text-align: center;
+}
+
+.receipt__foot p {
+  margin: 0;
+  color: var(--roast);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+
+.receipt__barcode {
+  margin-top: 6px !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 0.05em;
+  color: var(--espresso) !important;
+  opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+  .edu__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .receipt {
+    max-width: 480px;
+  }
+}
