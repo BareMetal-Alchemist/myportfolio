@@ -59,7 +59,7 @@ function runCommand(raw, { setTheme }) {
         `${profile.eyebrow} · SAIC · ${profile.location}`,
         "cribl certified engineer (level 3) · m.s. computer engineering, csuf (in progress)",
       ],
-      scrollTo: "about",
+      //scrollTo: "about",
     };
   }
 
@@ -72,7 +72,7 @@ function runCommand(raw, { setTheme }) {
         lines.push(`    ${item.name} ${dots} ${item.price}`);
       }
     }
-    return { lines, scrollTo: "skills" };
+    return lines;
   }
 
   if (lower === "brew experience") {
@@ -81,7 +81,7 @@ function runCommand(raw, { setTheme }) {
       lines.push(`  ☕ ${pad(`${job.start} – ${job.end}`, 22)}${job.role} · ${job.org}`);
     }
     lines.push("", "✓ poured. scroll for the full notes.");
-    return { lines, scrollTo: "experience" };
+    return lines;
   }
 
   if (lower === "brew projects") {
@@ -90,14 +90,14 @@ function runCommand(raw, { setTheme }) {
       lines.push(`  ${pad(p.part, 14)}${p.name}${p.featured ? "  ★ featured" : ""}`);
     }
     lines.push("", `✓ poured. more at ${links.github}`);
-    return { lines, scrollTo: "projects" };
+    return lines;
   }
 
   if (lower === "ls certs" || lower === "ls certs/") {
     const lines = certifications.map(
       (c) => `  ${c.featured ? "★" : "·"} ${pad(c.name, 40)}${c.issuer}${c.issued ? ` · ${c.issued}` : ""}`
     );
-    return { lines, scrollTo: "education" };
+    return lines;
   }
 
   if (lower === "ls") {
@@ -107,7 +107,7 @@ function runCommand(raw, { setTheme }) {
   if (lower === "contact") {
     return {
       lines: [`  email     ${links.email}`, `  linkedin  ${links.linkedin}`, `  github    ${links.github}`],
-      scrollTo: "contact",
+      //scrollTo: "contact",
     };
   }
 
